@@ -33,3 +33,12 @@ function mostrarError(contenedorNumero) {
     <p style="color: red;">No se encontró el Pokémon. Verifica el nombre o número.</p>
   `;
 }
+
+// Mostrar pokemon inicial
+
+window.onload = function(){
+  document.getElementById("pokemonInput1").value = "25";
+  buscarPokemon(1);
+  document.getElementById("pokemonInput2").value = "4";
+  buscarPokemon(2);
+}
