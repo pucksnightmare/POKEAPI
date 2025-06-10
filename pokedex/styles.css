@@ -1,7 +1,7 @@
 /* Estilo general */
 body {
     margin: 0;
-    min-height: 123vh; /* para que crezca si contenido es más alto que viewport */
+    min-height: 125vh; /* para que crezca si contenido es más alto que viewport */
     background-image: url('fondo1.jpg');
     background-size: cover;
     background-position: center;
