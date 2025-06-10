@@ -1,6 +1,11 @@
 function mostrarFormulario(tipo) {
   const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
+  const loginError = document.getElementById('loginError');
+  const registerError = document.getElementById('registerError');
+
+  loginError.textContent = '';
+  registerError.textContent = '';
 
   if (tipo === 'login') {
     loginForm.classList.add('active');
@@ -12,20 +17,30 @@ function mostrarFormulario(tipo) {
 }
 
 function iniciarSesion() {
-  const user = document.getElementById('loginUser').value;
-  const pass = document.getElementById('loginPass').value;
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value.trim();
 
   const storedUser = localStorage.getItem(user);
+  if (!user || !pass) {
+    document.getElementById('loginError').textContent = "Completa todos los campos.";
+    return;
+  }
+
   if (storedUser && JSON.parse(storedUser).password === pass) {
     window.location.href = "../index.html";
   } else {
-    document.getElementById('loginError').textContent = "Credenciales incorrectas.";
+    document.getElementById('loginError').textContent = "Usuario o contraseña incorrectos.";
   }
 }
 
 function registrarse() {
-  const user = document.getElementById('registerUser').value;
-  const pass = document.getElementById('registerPass').value;
+  const user = document.getElementById('registerUser').value.trim();
+  const pass = document.getElementById('registerPass').value.trim();
+
+  if (!user || !pass) {
+    document.getElementById('registerError').textContent = "Completa todos los campos.";
+    return;
+  }
 
   if (localStorage.getItem(user)) {
     document.getElementById('registerError').textContent = "El usuario ya existe.";

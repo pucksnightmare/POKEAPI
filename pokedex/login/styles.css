@@ -12,12 +12,27 @@ body {
 }
 
 .login-container {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 30px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 30px;
   border-radius: 15px;
-  width: 350px;
+  width: 380px;
   color: white;
   text-align: center;
+  border: 4px solid #ffcb05;
+  box-shadow: 0 0 20px #ff0000;
+  animation: aparecer 0.8s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #ffcb05;
+  text-shadow: 2px 2px #2a75bb;
+  margin-bottom: 20px;
 }
 
 .form-toggle button {
@@ -28,28 +43,43 @@ body {
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .form-toggle button:hover {
-  background-color: darkred;
+  background-color: #a30000;
 }
 
 .form {
   display: none;
   margin-top: 20px;
+  animation: fade 0.5s ease-in-out;
 }
 
 .form.active {
   display: block;
 }
 
-input {
-  display: block;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 5px 10px;
+}
+
+.input-group i {
+  color: #2a75bb;
+  margin-right: 10px;
+}
+
+.input-group input {
+  flex-grow: 1;
   border: none;
-  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  font-size: 1em;
 }
 
 button {
@@ -60,6 +90,12 @@ button {
   color: #2a75bb;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffdb4d;
 }
 
 .error-msg {
