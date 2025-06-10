@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pokédex - Inicio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <div class="login-container">
@@ -20,11 +20,12 @@
       <h2>Iniciar Sesión</h2>
       <div class="input-group">
         <i class="fa-solid fa-user"></i>
-        <input type="text" id="loginUser" placeholder="Usuario" required>
+        <input type="text" id="loginUser" placeholder="Usuario" required />
       </div>
-      <div class="input-group">
+      <div class="input-group password-group">
         <i class="fa-solid fa-lock"></i>
-        <input type="password" id="loginPass" placeholder="Contraseña" required>
+        <input type="password" id="loginPass" placeholder="Contraseña" required />
+        <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('loginPass', this)"></i>
       </div>
       <button onclick="iniciarSesion()">Entrar</button>
       <p id="loginError" class="error-msg"></p>
@@ -34,16 +35,20 @@
       <h2>Registrarse</h2>
       <div class="input-group">
         <i class="fa-solid fa-user-plus"></i>
-        <input type="text" id="registerUser" placeholder="Usuario" required>
+        <input type="text" id="registerUser" placeholder="Usuario" required />
       </div>
-      <div class="input-group">
+      <div class="input-group password-group">
         <i class="fa-solid fa-key"></i>
-        <input type="password" id="registerPass" placeholder="Contraseña" required>
+        <input type="password" id="registerPass" placeholder="Contraseña" required />
+        <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('registerPass', this)"></i>
       </div>
       <button onclick="registrarse()">Crear cuenta</button>
       <p id="registerError" class="error-msg"></p>
     </div>
+
+    <p id="successMessage" class="success-msg"></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

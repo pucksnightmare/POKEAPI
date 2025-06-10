@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Verdana', sans-serif;
-  background-image: url('fondo-login.jpg');
+  background-image: url('pikachu3.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -102,4 +102,24 @@ button:hover {
   color: tomato;
   font-size: 0.9em;
   margin-top: 10px;
+}
+
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #2a75bb;
+}
+
+.success-msg {
+  color: lightgreen;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
 }
